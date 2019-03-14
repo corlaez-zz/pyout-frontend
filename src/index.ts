@@ -1,26 +1,20 @@
-import * as ko from 'knockout';
-import { localStorageItem } from './config/constants'
-import TodoViewModel from './viewmodels/todo';
+import ko from 'knockout';
+import { todoViewModelRegister } from './viewmodels/todo'
 import './extends/handlers'
 import './styles/base.css'
 import './styles/index.css'
+import { getTime } from './effects/api';
 
-const defaultTodos = [
-    { title: 'Made with Knockout.' },
-    { title: 'Written in TypeScript.' },
-    { title: 'Python provides the time.' },
-]
+todoViewModelRegister()
 
-const stringTodos = window.localStorage.getItem(localStorageItem) || JSON.stringify(defaultTodos)
-const todos = ko.utils.parseJson(stringTodos)
+const App = () => {}
 
-ko.applyBindings(new TodoViewModel(todos))
+ko.applyBindings(new App())
 
 const alertTime = async () => {
-    const url = `https://${location.host}/api/time.py`
-    const response = await fetch(url)
-    const text = await response.text()
-    alert('Python time: ' + text)
+    const time = await getTime()
+    if (time)
+        alert('Python time ' + time)
 }
 
 window['logPythonTime'] = alertTime
