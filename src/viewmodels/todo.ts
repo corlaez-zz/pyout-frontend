@@ -1,8 +1,9 @@
-import * as ko from 'knockout';
+import ko from 'knockout';
 import Todo from '../models/Todo';
-import { localStorageItem } from '../config/constants'
+import template from './todo.html'
+import { setTodos, getTodos } from '../effects/todosCache';
 
-const TodoViewModel = function (todos) {
+const todoViewModel = function (todos = getTodos()) {
     const self = this;
 
     // map array of passed in todos to an observableArray of Todo objects
@@ -102,10 +103,19 @@ const TodoViewModel = function (todos) {
     ko.computed(function () {
         // store a clean copy to local storage, which also creates a dependency
         // on the observableArray and all observables in each item
-        window.localStorage.setItem(localStorageItem, ko.toJSON(self.todos));
+        setTodos(self.todos)
     }).extend({
         rateLimit: { timeout: 500, method: 'notifyWhenChangesStop' }
     }); // save at most twice per second
+
 };
 
-export default TodoViewModel;
+export const todoViewModelRegister = () =>  {
+    const config: ko.components.Config = {
+        viewModel: todoViewModel,
+        template
+    }
+    ko.components.register('todo', config)
+}
+
+export default todoViewModel
