@@ -1,4 +1,4 @@
-import { OnInitialize } from "./lib/Overko";
+import { OnInitialize } from "overko";
 import Todo from "../models/Todo";
 
 const onInitialize: OnInitialize = ({ state, effects }) => {
