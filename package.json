@@ -23,7 +23,8 @@
     "typescript": "^3.3.3333"
   },
   "dependencies": {
-    "knockout": "^3.5.0"
+    "knockout": "^3.5.0",
+    "overko": "^0.1.0"
   },
   "browserslist": [
     "since 2017-06"
