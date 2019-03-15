@@ -1,18 +1,15 @@
 import * as ko from 'knockout';
 import Todo from '../models/Todo';
 import template from './todo.html'
-import { setTodos, getTodos } from '../effects/todosCache';
+import { connect, Connect } from '../overko';
 
-const todoViewModel = function (todos = getTodos()) {
+const overtodoViewModel = function (props: Connect) {
     const self = this;
-
-    // map array of passed in todos to an observableArray of Todo objects
-    self.todos = ko.observableArray(ko.utils.arrayMap(todos, function (todo) {
-        return new Todo(todo.title, todo.completed);
-    }));
+    const setTodos = props.overko.effects.todosCache.setTodos
+    self.todos = props.overko.state.todos.list
 
     // store the new todo value being entered
-    self.current = ko.observable();
+    self.current = props.overko.state.todos.input
 
     // add a new todo, when enter key is pressed
     self.add = function () {
@@ -110,12 +107,14 @@ const todoViewModel = function (todos = getTodos()) {
 
 };
 
-export const todoViewModelRegister = () =>  {
+const connectedOvertodo = connect(overtodoViewModel)
+
+export const overtodoViewModelRegister = () =>  {
     const config: ko.components.Config = {
-        viewModel: todoViewModel,
+        viewModel: connectedOvertodo,
         template
     }
-    ko.components.register('todo', config)
+    ko.components.register('overtodo', config)
 }
 
-export default todoViewModel
+export default connectedOvertodo
