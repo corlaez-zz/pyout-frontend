@@ -1,5 +1,5 @@
-import * as ko from 'knockout';
-import { localStorageItem } from '../config/constants'
+import * as ko from 'knockout'
+import { localStorageItem } from '../../config/constants'
 
 const defaultTodos = [
     { title: 'Made with Knockout.' },

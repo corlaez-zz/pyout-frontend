@@ -4,7 +4,7 @@ import { overtodoViewModelRegister } from './viewmodels/overtodo'
 import './extends/handlers'
 import './styles/base.css'
 import './styles/index.css'
-import { getTime } from './effects/api';
+import { getTime } from "./overko/effects/api";
 
 todoViewModelRegister()
 overtodoViewModelRegister()

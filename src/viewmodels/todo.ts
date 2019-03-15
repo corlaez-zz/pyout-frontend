@@ -1,7 +1,7 @@
 import * as ko from 'knockout';
 import Todo from '../models/Todo';
 import template from './todo.html'
-import { setTodos, getTodos } from '../effects/todosCache';
+import { setTodos, getTodos } from '../overko/effects/todosCache';
 
 const todoViewModel = function (todos = getTodos()) {
     const self = this;

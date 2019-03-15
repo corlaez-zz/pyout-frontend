@@ -1,4 +1,4 @@
-import { Overko, IConfiguration } from "./Overko";
+import { Overko, IConfiguration } from "./Overko"
 
 const throwIfNotAFunction = (o, message) => {
   if (typeof o !== 'function') {
