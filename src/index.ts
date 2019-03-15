@@ -1,4 +1,4 @@
-import ko from 'knockout';
+import * as ko from 'knockout';
 import { todoViewModelRegister } from './viewmodels/todo'
 import './extends/handlers'
 import './styles/base.css'

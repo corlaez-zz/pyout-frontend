@@ -1,4 +1,4 @@
-import ko from 'knockout';
+import * as ko from 'knockout';
 import { localStorageItem } from '../config/constants'
 
 const defaultTodos = [

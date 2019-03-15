@@ -1,4 +1,4 @@
-import ko from 'knockout';
+import * as ko from 'knockout';
 import Todo from '../models/Todo';
 import template from './todo.html'
 import { setTodos, getTodos } from '../effects/todosCache';
