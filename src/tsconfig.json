@@ -1,10 +1,10 @@
 {
-    "compilerOptions": {
-        "allowJs": true,
-        "lib": ["dom", "es6"],
-        "skipLibCheck": true,
-        "module": "esnext",
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-    }
+  "compilerOptions": {
+    "allowJs": true,
+    "lib": ["dom", "es6"],
+    "skipLibCheck": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true
+  }
 }

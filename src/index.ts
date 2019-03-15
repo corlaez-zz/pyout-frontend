@@ -1,23 +1,22 @@
-import * as ko from 'knockout';
-import { todoViewModelRegister } from './viewmodels/todo'
-import { overtodoViewModelRegister } from './viewmodels/overtodo'
-import './extends/handlers'
-import './styles/base.css'
-import './styles/index.css'
+import * as ko from "knockout";
+import { todoViewModelRegister } from "./viewmodels/todo";
+import { overtodoViewModelRegister } from "./viewmodels/overtodo";
+import "./extends/handlers";
+import "./styles/base.css";
+import "./styles/index.css";
 import { getTime } from "./overko/effects/api";
 
-todoViewModelRegister()
-overtodoViewModelRegister()
+todoViewModelRegister();
+overtodoViewModelRegister();
 
-const App = () => {}
+const App = () => {};
 
-ko.applyBindings(new App())
+ko.applyBindings(new App());
 
 const alertTime = async () => {
-    const time = await getTime()
-    if (time)
-        alert('Python time ' + time)
-}
+  const time = await getTime();
+  if (time) alert("Python time " + time);
+};
 
-window['logPythonTime'] = alertTime
-alertTime()
+window["logPythonTime"] = alertTime;
+alertTime();

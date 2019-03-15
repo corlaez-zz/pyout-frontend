@@ -1,10 +1,10 @@
-import * as ko from 'knockout'
+import * as ko from "knockout";
 
 const state = {
-    todos: {
-        list: ko.observableArray(),
-        input: ko.observable(''),
-    }
-}
+  todos: {
+    list: ko.observableArray(),
+    input: ko.observable("")
+  }
+};
 
-export default state
+export default state;
