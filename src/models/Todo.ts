@@ -2,6 +2,7 @@ import * as ko from "knockout";
 
 class Todo {
   title;
+  previousTitle;
   completed;
   editing;
 

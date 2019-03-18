@@ -4,19 +4,18 @@ import template from "./todo.html";
 import { connect, Connect } from "../overko";
 
 class OvertodoViewModel {
-  todos: ko.ObservableArray<any>;
+  todos: ko.ObservableArray<Todo>;
   current: ko.Observable<string>;
   add: () => void;
-  remove: (todo: any) => void;
+  remove: (todo: Todo) => void;
   removeCompleted: () => void;
-  editItem: (item: any) => void;
-  stopEditing: (item: any) => void;
-  cancelEditing: (item: any) => void;
+  editItem: (item: Todo) => void;
+  stopEditing: (item: Todo) => void;
+  cancelEditing: (item: Todo) => void;
   completedCount: ko.Computed<number>;
   remainingCount: ko.Computed<number>;
   allCompleted: ko.Computed<any>;
   getLabel: (count: any) => "item" | "items";
-
   constructor(props: Connect) {
     const self = this;
     const setTodos = props.overko.effects.todosCache.setTodos;

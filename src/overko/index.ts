@@ -1,11 +1,23 @@
-import config from "./config";
 import { createOverko, createConnect, IConnect } from "overko";
-import { IConfig } from "overko/dist/types";
+import { IConfig, IOnInitialize, IAction } from "overko/dist/types";
+import * as api from "./effects/api";
+import * as todosCache from "./effects/todosCache";
+import createState from "./createState";
+import * as actions from "./actions";
+import onInitialize from "./onInitialize";
 
-// For explicit typing check the Typescript guide
-declare module "overko" {
-  interface Config extends IConfig<typeof config> {}
-}
+export const createConfig = () => ({
+  state: createState(),
+  effects: { api, todosCache },
+  onInitialize,
+  actions
+});
+
+const config = createConfig();
+
+interface Config extends IConfig<typeof config> {}
+export interface OnInitialize extends IOnInitialize<Config> {}
+export interface Action<Input = void> extends IAction<Config, Input> {}
 
 const overko = createOverko(config);
 
