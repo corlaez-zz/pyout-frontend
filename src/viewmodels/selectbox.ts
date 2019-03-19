@@ -2,12 +2,18 @@ import * as ko from "knockout";
 import template from "./selectbox.html";
 import { connect, Connect } from "../overko";
 
-const selectBoxViewModel = function(props: Connect) {
-  const self = this;
-  self.checkGender = props.overko.state.gender.checkGender;
-};
+class SelectBoxViewModel {
+  checkGender: ko.Observable<string>;
+  options: Array<{ name: string; value: number }>;
 
-const connectedSelectBox = connect(selectBoxViewModel);
+  constructor(props: Connect) {
+    const self = this;
+    self.checkGender = props.overko.state.gender.checkGender;
+    self.options = props.overko.state.gender.options();
+  }
+}
+
+const connectedSelectBox = connect(SelectBoxViewModel);
 
 export const selectBoxViewModelRegister = () => {
   const config: ko.components.Config = {
@@ -17,4 +23,4 @@ export const selectBoxViewModelRegister = () => {
   ko.components.register("selectbox", config);
 };
 
-export default connectedSelectBox;
+export default SelectBoxViewModel;
