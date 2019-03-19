@@ -15,7 +15,7 @@ class SelectBoxViewModel {
 
 const connectedSelectBox = connect(SelectBoxViewModel);
 
-export const selectBoxViewModelRegister = () => {
+export const registerSelectBoxViewModel = () => {
   const config: ko.components.Config = {
     viewModel: connectedSelectBox,
     template
