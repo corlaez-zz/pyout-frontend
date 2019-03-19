@@ -1,11 +1,11 @@
-import { createConfig } from "../src/overko";
+import { config } from "../src/overko";
 import { createOverkoMock } from "overko";
 import Overtodo from "../src/viewmodels/overtodo";
 
 describe("Todos", () => {
   describe("initialization", () => {
     it("should add items to the todo lists on Initialization", async () => {
-      const overko = createOverkoMock(createConfig(), {
+      const overko = createOverkoMock(config, {
         todosCache: {
           getTodos: () => [{ title: "title" }],
           setTodos: () => {}
@@ -25,7 +25,7 @@ describe("Todos", () => {
 
   describe("todo viewModel", () => {
     it("should add items to the todo lists on Initialization", async () => {
-      const mock = createOverkoMock(createConfig(), {
+      const mock = createOverkoMock(config, {
         todosCache: {
           getTodos: () => [{ title: "title" }],
           setTodos: () => {}

@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "knockout": "^3.5.0",
-    "overko": "^0.1.2"
+    "overko": "^0.1.4"
   },
   "browserslist": [
     "since 2017-06"
