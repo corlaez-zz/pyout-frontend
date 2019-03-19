@@ -6,7 +6,7 @@ const state = {
     input: ""
   },
   gender: {
-    checkGender: "Male",
+    checkGender: [],
     options: [{ name: "Male", value: 1 }, { name: "Female", value: 2 }]
   }
 };
