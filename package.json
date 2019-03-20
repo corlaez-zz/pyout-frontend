@@ -6,7 +6,7 @@
   "scripts": {
     "start": "parcel src/index.html --open",
     "test": "jest",
-    "build": "rm -r dist && parcel build src/index.html"
+    "build": "rm -r dist || parcel build src/index.html"
   },
   "keywords": [],
   "author": "Armando Cordova",
