@@ -4,11 +4,9 @@
   "description": "A knockout js app using microenvi",
   "main": "public/scripts/bundle.mjs",
   "scripts": {
-    "dev": "parcel src/index.html --open",
-    "predeploy": "rm -r dist && parcel build src/index.html",
-    "deploy": "npm run now",
-    "now": "cd .. && now",
-    "test": "jest"
+    "start": "parcel src/index.html --open",
+    "test": "jest",
+    "build": "rm -r dist && parcel build src/index.html"
   },
   "keywords": [],
   "author": "Armando Cordova",
