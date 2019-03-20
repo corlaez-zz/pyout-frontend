@@ -1,0 +1,20 @@
+<div>
+  <div data-bind="foreach: { data: options, as: 'option'}">
+    <!--<input
+      type="radio"
+      name="gender"
+      data-bind="checked: $parent.checkGender, attr: { value: option.name }"
+    /><span data-bind="text: option.name"></span>-->
+
+    <input
+      type="checkbox"
+      data-bind="checked: $parent.checkGender, attr: { value: option.name }"
+    />
+    <span data-bind="text: option.name"></span>
+    <br />
+  </div>
+
+  <div>
+    <p>You have selected: <span data-bind="text: message"></span></p>
+  </div>
+</div>
