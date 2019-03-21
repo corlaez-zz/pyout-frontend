@@ -1,0 +1,16 @@
+<link rel="stylesheet" type="text/css" href="adsetlist.css" />
+
+<!---<div class="grid">
+  <span><strong>Id</strong></span>
+  <span><strong>Full Name</strong></span>
+  <span><strong>Country</strong></span>
+  <span><strong>Created at</strong></span>
+  <span><strong>Email</strong></span>
+</div>-->
+<div class="grid" data-bind="foreach: { data: data, as: 'data'}">
+  <span data-bind="text: $index() + 1">0</span>
+  <span data-bind="text: data.data1"></span>
+  <span data-bind="text: data.data2"></span>
+  <span data-bind="text: data.data3"></span>
+  <span data-bind="text: data.data4"></span>
+</div>
