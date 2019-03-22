@@ -5,7 +5,7 @@ import { registerGenderPickerViewModel } from "./viewmodels/genderpicker";
 import "./extends/handlers";
 import "./styles/base.css";
 import "./styles/index.css";
-import { getTime } from "./overko/effects/api";
+
 import { getGenders } from "./overko/effects/api";
 
 todoViewModelRegister();
@@ -16,17 +16,9 @@ const App = () => {};
 
 ko.applyBindings(new App());
 
-const alertTime = async () => {
-  const time = await getTime();
-  if (time) alert("Python time " + time);
-};
-
-const testGender = async () => {
+const testGenders = async () => {
   const gender = await getGenders();
   console.log(gender);
 };
 
-window["logPythonTime"] = alertTime;
-alertTime();
-
-testGender();
+testGenders();
