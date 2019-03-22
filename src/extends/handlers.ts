@@ -1,5 +1,7 @@
 import * as ko from "knockout";
-import { ENTER_KEY, ESCAPE_KEY } from "../config/constants";
+
+const ENTER_KEY = 13;
+const ESCAPE_KEY = 27;
 
 function keyupBindingFactory(keyCode) {
   return {

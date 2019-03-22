@@ -7,6 +7,7 @@ import "./extends/handlers";
 import "./styles/base.css";
 import "./styles/index.css";
 import { getTime } from "./overko/effects/api";
+import { overko } from "./overko";
 
 todoViewModelRegister();
 registerOvertodoViewModel();
@@ -24,3 +25,5 @@ const alertTime = async () => {
 
 window["logPythonTime"] = alertTime;
 alertTime();
+
+overko.onInitialize();
