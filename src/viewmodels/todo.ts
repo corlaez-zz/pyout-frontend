@@ -111,7 +111,7 @@ const todoViewModel = function(todos = getTodos()) {
   }); // save at most twice per second
 };
 
-export const todoViewModelRegister = () => {
+export const registerTodoViewModel = () => {
   const config: ko.components.Config = {
     viewModel: todoViewModel,
     template
