@@ -51,17 +51,10 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-  deploy:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/pyout-frontend
-      - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/pyout-frontend/.npmrc
-      - run: npm publish
 
 workflows:
   version: 2
-  pr:
+  status-pr:
     jobs:
       - install:
           filters:
