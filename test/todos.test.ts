@@ -1,10 +1,12 @@
-import { config } from "../src/overko";
 import { createOverkoMock } from "overko";
-import Overtodo from "../src/viewmodels/overtodo";
+import { config } from "../src/overko";
+import OvertodoViewModel from "../src/viewmodels/overtodo";
 
 describe("Todos", () => {
   describe("initialization", () => {
-    it("should add items to the todo lists on Initialization", async () => {
+    it("overko should add items to the todo lists on Initialization", async () => {
+      expect.assertions(2);
+
       const overko = createOverkoMock(config, {
         todosCache: {
           getTodos: () => [{ title: "title" }],
@@ -15,8 +17,7 @@ describe("Todos", () => {
       const lengthBefore = overko.state.todos.list().length;
       expect(lengthBefore).toBe(0);
 
-      overko.onInitialize();
-      await overko.initialized;
+      await overko.onInitialize();
 
       const lengthAfter = overko.state.todos.list().length;
       expect(lengthAfter).toBe(1);
@@ -24,7 +25,7 @@ describe("Todos", () => {
   });
 
   describe("todo viewModel", () => {
-    it("should add items to the todo lists on Initialization", async () => {
+    it("view model should add items to the todo lists on Initialization", async () => {
       const mock = createOverkoMock(config, {
         todosCache: {
           getTodos: () => [{ title: "title" }],
@@ -32,13 +33,12 @@ describe("Todos", () => {
         }
       });
 
-      const todo = new Overtodo({ overko: mock });
+      const todo = new OvertodoViewModel({ overko: mock });
 
       const lengthBefore = todo.todos().length;
       expect(lengthBefore).toBe(0);
 
-      mock.onInitialize();
-      await mock.initialized;
+      await mock.onInitialize();
 
       const lengthAfter = todo.todos().length;
       expect(lengthAfter).toBe(1);
