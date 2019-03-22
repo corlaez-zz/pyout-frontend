@@ -3,5 +3,6 @@ module.exports = {
   testEnvironment: "node",
   transform: {
     "^.+\\.html?$": "html-loader-jest"
-  }
+  },
+  globalSetup: "./test/setup.js"
 };

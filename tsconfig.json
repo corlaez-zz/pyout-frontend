@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "lib": ["dom", "es2015"],
+    "lib": ["dom", "es2015", "esnext"],
     "skipLibCheck": true,
     "module": "esnext",
     "moduleResolution": "node",
