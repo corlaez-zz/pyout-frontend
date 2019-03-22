@@ -1,17 +1,24 @@
 import * as ko from "knockout";
 import template from "./genderpicker.html";
 import { connect, Connect } from "../overko";
+import { GenderOption } from "../overko/state";
 
 class GenderPickerViewModel {
   checkGender: ko.ObservableArray<string>;
-  options: Array<{ name: string; value: number }>;
+  options: ko.ObservableArray<GenderOption>;
   message: ko.Computed<string>;
 
   constructor(props: Connect) {
     const self = this;
     self.checkGender = props.overko.state.gender.checkGender;
-    self.options = props.overko.state.gender.options();
-    self.message = ko.computed(() => self.checkGender().join(", "), this);
+    self.options = props.overko.state.gender.options;
+    self.message = ko.computed(() =>
+      self
+        .options()
+        .filter(o => self.checkGender().includes(o.value))
+        .map(o => o.name)
+        .join(", ")
+    );
   }
 }
 
