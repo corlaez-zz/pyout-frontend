@@ -7,11 +7,13 @@ import "./extends/handlers";
 import "./styles/base.css";
 import "./styles/index.css";
 import { overko } from "./overko";
+import { registerAdsetForm } from "./viewmodels/AdsetForm";
 
 registerTodoApp();
 registerOvertodoApp();
 registerGenderPicker();
 registerPlatformPicker();
+registerAdsetForm();
 
 const App = () => {};
 
