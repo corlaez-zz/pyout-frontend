@@ -1,5 +1,5 @@
 import { createOverkoMock } from "overko";
-import OvertodoViewModel from "../src/viewmodels/overtodo";
+import OvertodoViewModel from "../src/viewmodels/OvertodoApp";
 import { config } from "../src/overko";
 
 describe("todo viewModel", () => {

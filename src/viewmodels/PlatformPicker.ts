@@ -1,5 +1,5 @@
 import * as ko from "knockout";
-import template from "./platform.html";
+import template from "./PlatformPicker.html";
 import { connect, Connect } from "../overko";
 import { PlatformOption } from "../overko/state";
 
@@ -24,12 +24,12 @@ class PlatformPickerViewModel {
 
 const connectedPlatformPicker = connect(PlatformPickerViewModel);
 
-export const registerPlatformPickerViewModel = () => {
+export const registerPlatformPicker = () => {
   const config: ko.components.Config = {
     viewModel: connectedPlatformPicker,
     template
   };
-  ko.components.register("platformpicker", config);
+  ko.components.register("platform-picker", config);
 };
 
 export default PlatformPickerViewModel;

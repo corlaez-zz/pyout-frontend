@@ -1,6 +1,6 @@
 import { config } from "../src/overko";
 import { createOverkoMock } from "overko";
-import GenderPickerViewModel from "../src/viewmodels/genderpicker";
+import GenderPickerViewModel from "../src/viewmodels/GenderPicker";
 
 describe("GenderPicker", () => {
   describe("ViewModel", () => {

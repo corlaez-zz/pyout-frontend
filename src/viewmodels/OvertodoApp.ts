@@ -1,6 +1,6 @@
 import * as ko from "knockout";
 import Todo from "../models/Todo";
-import template from "./todo.html";
+import template from "./TodoApp.html";
 import { connect, Connect } from "../overko";
 
 class OvertodoViewModel {
@@ -120,12 +120,12 @@ class OvertodoViewModel {
   }
 }
 
-export const registerOvertodoViewModel = () => {
+export const registerOvertodoApp = () => {
   const config: ko.components.Config = {
     viewModel: connect(OvertodoViewModel),
     template
   };
-  ko.components.register("overtodo", config);
+  ko.components.register("overtodo-app", config);
 };
 
 export default OvertodoViewModel;

@@ -1,5 +1,5 @@
 import * as ko from "knockout";
-import template from "./genderpicker.html";
+import template from "./GenderPicker.html";
 import { connect, Connect } from "../overko";
 import { GenderOption } from "../overko/state";
 
@@ -22,14 +22,12 @@ class GenderPickerViewModel {
   }
 }
 
-const connectedSelectBox = connect(GenderPickerViewModel);
-
-export const registerGenderPickerViewModel = () => {
+export const registerGenderPicker = () => {
   const config: ko.components.Config = {
-    viewModel: connectedSelectBox,
+    viewModel: connect(GenderPickerViewModel),
     template
   };
-  ko.components.register("genderpicker", config);
+  ko.components.register("gender-picker", config);
 };
 
 export default GenderPickerViewModel;
