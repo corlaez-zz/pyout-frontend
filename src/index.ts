@@ -14,6 +14,7 @@ registerGenderPickerViewModel();
 registerPlatformPickerViewModel();
 
 const App = () => {};
-ko.applyBindings(new App());
 
-overko.onInitialize();
+overko.onInitialize().then(() => {
+  ko.applyBindings(new App());
+});
