@@ -1,6 +1,6 @@
 import { config } from "../src/overko";
 import { createOverkoMock } from "overko";
-import GenderPickerViewModel from "../src/viewmodels/GenderPicker";
+import GenderPickerVM from "../src/viewmodels/GenderPicker";
 
 describe("GenderPicker", () => {
   describe("ViewModel", () => {
@@ -11,7 +11,7 @@ describe("GenderPicker", () => {
         todosCache: { getTodos: () => {} }
       });
 
-      const genderPicker = new GenderPickerViewModel({ overko });
+      const genderPicker = new GenderPickerVM({ overko });
 
       const gender1 = { name: "Man", value: "17" };
       const gender2 = { name: "Woman", value: "18" };

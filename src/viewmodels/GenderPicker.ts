@@ -3,7 +3,7 @@ import template from "./GenderPicker.html";
 import { connect, Connect } from "../overko";
 import { GenderOption } from "../overko/state";
 
-class GenderPickerViewModel {
+class GenderPickerVM {
   checkGender: ko.ObservableArray<string>;
   options: ko.ObservableArray<GenderOption>;
   message: ko.Computed<string>;
@@ -24,10 +24,10 @@ class GenderPickerViewModel {
 
 export const registerGenderPicker = () => {
   const config: ko.components.Config = {
-    viewModel: connect(GenderPickerViewModel),
+    viewModel: connect(GenderPickerVM),
     template
   };
   ko.components.register("gender-picker", config);
 };
 
-export default GenderPickerViewModel;
+export default GenderPickerVM;
