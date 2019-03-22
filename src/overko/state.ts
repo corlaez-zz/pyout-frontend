@@ -5,6 +5,11 @@ export interface GenderOption {
   value: string;
 }
 
+export interface PlatformOption {
+  name: string;
+  value: string;
+}
+
 const state = {
   todos: {
     list: [] as Todo[],
@@ -19,13 +24,13 @@ const state = {
     ] as GenderOption[]
   },
   platform: {
-    checkPlatform: [],
+    checkPlatform: [] as string[],
     options: [
-      { name: "Option 1", value: 1 },
-      { name: "Option 2", value: 2 },
-      { name: "Option 3", value: 3 },
-      { name: "Option 4", value: 4 }
-    ]
+      { name: "Option 1", value: "1" },
+      { name: "Option 2", value: "2" },
+      { name: "Option 3", value: "3" },
+      { name: "Option 4", value: "4" }
+    ] as PlatformOption[]
   }
 };
 
