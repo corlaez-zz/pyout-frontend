@@ -1,5 +1,5 @@
 import * as ko from "knockout";
-import { todoViewModelRegister } from "./viewmodels/todo";
+import { registerTodoViewModel } from "./viewmodels/todo";
 import { registerOvertodoViewModel } from "./viewmodels/overtodo";
 import { registerGenderPickerViewModel } from "./viewmodels/genderpicker";
 import { registerPlatformPickerViewModel } from "./viewmodels/platform";
@@ -9,7 +9,7 @@ import "./styles/index.css";
 import { getTime } from "./overko/effects/api";
 import { overko } from "./overko";
 
-todoViewModelRegister();
+registerTodoViewModel();
 registerOvertodoViewModel();
 registerGenderPickerViewModel();
 registerPlatformPickerViewModel();
