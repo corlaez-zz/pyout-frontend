@@ -17,7 +17,7 @@ interface Config extends IConfig<typeof config> {}
 export interface OnInitialize extends IOnInitialize<Config> {}
 export interface Action<Input = void> extends IAction<Config, Input> {}
 
-const overko = createOverko(config);
+export const overko = createOverko(config);
 
 export interface Connect extends IConnect<typeof config> {}
 export const connect = createConnect(overko);
