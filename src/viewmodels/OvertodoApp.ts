@@ -1,9 +1,9 @@
 import * as ko from "knockout";
 import Todo from "../models/Todo";
-import template from "./todo.html";
+import template from "./TodoApp.html";
 import { connect, Connect } from "../overko";
 
-class OvertodoViewModel {
+class OvertodoAppVM {
   todos: ko.ObservableArray<Todo>;
   current: ko.Observable<string>;
   add: () => void;
@@ -120,12 +120,12 @@ class OvertodoViewModel {
   }
 }
 
-export const registerOvertodoViewModel = () => {
+export const registerOvertodoApp = () => {
   const config: ko.components.Config = {
-    viewModel: connect(OvertodoViewModel),
+    viewModel: connect(OvertodoAppVM),
     template
   };
-  ko.components.register("overtodo", config);
+  ko.components.register("overtodo-app", config);
 };
 
-export default OvertodoViewModel;
+export default OvertodoAppVM;

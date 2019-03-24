@@ -1,5 +1,5 @@
 import { createOverkoMock } from "overko";
-import OvertodoViewModel from "../src/viewmodels/overtodo";
+import OvertodoAppVM from "../src/viewmodels/OvertodoApp";
 import { config } from "../src/overko";
 
 describe("todo viewModel", () => {
@@ -12,7 +12,7 @@ describe("todo viewModel", () => {
       }
     });
 
-    const todo = new OvertodoViewModel({ overko: mock });
+    const todo = new OvertodoAppVM({ overko: mock });
 
     const lengthBefore = todo.todos().length;
     expect(lengthBefore).toBe(0);

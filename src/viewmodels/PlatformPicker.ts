@@ -1,9 +1,9 @@
 import * as ko from "knockout";
-import template from "./platform.html";
+import template from "./PlatformPicker.html";
 import { connect, Connect } from "../overko";
 import { PlatformOption } from "../overko/state";
 
-class PlatformPickerViewModel {
+class PlatformPickerVM {
   checkPlatform: ko.ObservableArray<string>;
   options: ko.ObservableArray<PlatformOption>;
   message: ko.Computed<string>;
@@ -22,14 +22,12 @@ class PlatformPickerViewModel {
   }
 }
 
-const connectedPlatformPicker = connect(PlatformPickerViewModel);
-
-export const registerPlatformPickerViewModel = () => {
+export const registerPlatformPicker = () => {
   const config: ko.components.Config = {
-    viewModel: connectedPlatformPicker,
+    viewModel: connect(PlatformPickerVM),
     template
   };
-  ko.components.register("platformpicker", config);
+  ko.components.register("platform-picker", config);
 };
 
-export default PlatformPickerViewModel;
+export default PlatformPickerVM;

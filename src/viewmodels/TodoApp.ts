@@ -1,9 +1,9 @@
 import * as ko from "knockout";
 import Todo from "../models/Todo";
-import template from "./todo.html";
+import template from "./TodoApp.html";
 import { setTodos, getTodos } from "../overko/effects/todosCache";
 
-const todoViewModel = function(todos = getTodos()) {
+const TodoAppVM = function(todos = getTodos()) {
   const self = this;
 
   // map array of passed in todos to an observableArray of Todo objects
@@ -111,12 +111,12 @@ const todoViewModel = function(todos = getTodos()) {
   }); // save at most twice per second
 };
 
-export const registerTodoViewModel = () => {
+export const registerTodoApp = () => {
   const config: ko.components.Config = {
-    viewModel: todoViewModel,
+    viewModel: TodoAppVM,
     template
   };
-  ko.components.register("todo", config);
+  ko.components.register("todo-app", config);
 };
 
-export default todoViewModel;
+export default TodoAppVM;
