@@ -3,7 +3,7 @@ import { config } from "../src/overko";
 
 describe("Initialization", () => {
   it("Verify state is updated with the results of effects", async () => {
-    expect.assertions(2);
+    expect.assertions(6);
 
     const overko = createOverkoMock(config, {
       todosCache: {

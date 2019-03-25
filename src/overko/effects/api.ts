@@ -1,13 +1,12 @@
-const api = endpoint => async () => {
+const api = endpoint => async (): Promise<any> => {
   const url = `https://pyout-backend.herokuapp.com/api/${endpoint}`;
   try {
     const response = await fetch(url);
-    const text = await response.json();
-    return text;
+    return response.json();
   } catch (e) {
-    return null;
+    return Promise.reject();
   }
 };
 
-export const genders = api("genders");
-export const platforms = api("platforms");
+export const genders = () => api("genders")().then(res => res.genders);
+export const platforms = () => api("platforms")().then(res => res.platforms);
