@@ -9,9 +9,9 @@ const todosInitialize: OnInitialize = async ({ state, effects }) => {
   );
 };
 
-const optionsInitialize: OnInitialize = async ({ state, effects }) => {
+const gendersInitialize: OnInitialize = async ({ state, effects }) => {
   const res = await effects.api.genders();
-  const parsedOptions = res.genders.map((opt: any) => {
+  const parsedOptions = res.map((opt: any) => {
     return {
       value: opt.id,
       name: opt.name
@@ -22,7 +22,7 @@ const optionsInitialize: OnInitialize = async ({ state, effects }) => {
 
 const platformsInitialize: OnInitialize = async ({ state, effects }) => {
   const res = await effects.api.platforms();
-  const parsedPlatforms = res.platforms.map((opt: any) => {
+  const parsedPlatforms = res.map((opt: any) => {
     return {
       value: opt.id,
       name: opt.name
@@ -34,7 +34,7 @@ const platformsInitialize: OnInitialize = async ({ state, effects }) => {
 const onInitialize: OnInitialize = async context => {
   return Promise.all([
     todosInitialize(context),
-    optionsInitialize(context),
+    gendersInitialize(context),
     platformsInitialize(context)
   ]);
 };
