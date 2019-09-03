@@ -1,6 +1,6 @@
 # **_Python Knockout frontend_**
 
-[![CircleCI](https://circleci.com/gh/lrn2prgrm/pyout-frontend.svg?style=svg)](https://circleci.com/gh/lrn2prgrm/pyout-frontend)
+[![CircleCI](https://circleci.com/gh/lrn2prgrm/pyout-frontend.svg?style=svg)](https://circleci.com/gh/lrn2prgrm/pyout-frontend) [![Greenkeeper badge](https://badges.greenkeeper.io/corlaez/pyout-frontend.svg)](https://greenkeeper.io/)
 
 A sample adset app written with Typescript and Knockout. Intended to be used with a python backend.
 
